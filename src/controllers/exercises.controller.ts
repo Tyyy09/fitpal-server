@@ -50,5 +50,18 @@ router.put('/:id', (req: Request, res: Response) => {
     return res.status(204).json({ msg: 'Exercise updated' }); // 204: no content
 });
 
+//delete : /api/v1/exercises/id => delete exercise base on id
+router.delete('/:id', (req: Request, res: Response) => {
+    //search array for id in url param
+    const index: number = exercises.findIndex(e => e.id.toString() === req.params.id);
+
+    if (index === -1){
+        return res.status(404).json({json: 'Exercise not found'});
+    }
+    // remove exercise from array
+    exercises.splice(index, 1);
+    return res.status(204).json({ msg: 'Exercise deleted' }); // 204: no content
+});
+
 // make router public so other files can access it
 module.exports = router;
