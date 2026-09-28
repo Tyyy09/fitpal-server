@@ -12,7 +12,7 @@ interface Exercise {
 
 let exercises = [
     { id: 1, name: 'Squats' },
-    { id: 2, name: 'Rope Jumping' },
+    { id: 2, name: 'Push-ups' },
     { id: 3, name: 'Jogging' },
     { id: 4, name: 'Volleyball' }
 ];
