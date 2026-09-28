@@ -48,7 +48,6 @@ router.delete('/:id', (req, res) => {
         return res.status(404).json({ json: 'Exercise not found' });
     }
     // remove exercise from array
-    // splice(index, 1) => remove 1 element from array at index
     exercises.splice(index, 1);
     return res.status(204).json({ msg: 'Exercise deleted' }); // 204: no content
 });
